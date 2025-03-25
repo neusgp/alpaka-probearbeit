@@ -14,7 +14,7 @@
   --color-blue-dark: #0072cf;
   --color-blue-gray: #5897bc;
   --color-blue-gray-dark: #009cc4;
-  --blue-darker: #004587;
+  --color-blue-darker: #004587;
   --color-yellow: #f7ec69;
   --color-yellow-dark: #fbb900;
   --color-yellow-light: #ffd800;
@@ -47,13 +47,26 @@ h1 {
   font-weight: bold;
 }
 
+h2 {
+  font-size: 32px;
+  font-weight: 300;
+}
+
 h3 {
   font-size: 20px;
   font-weight: bold;
 }
+
 .center {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.position-scroll-button {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(50%);
 }
