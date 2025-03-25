@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Icon, Intent, Size } from "../@types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { Icon, Intent, Size } from "../@types";
 
 const getButtonStyles = ({
   intent,
@@ -43,7 +43,7 @@ const getButtonStyles = ({
       intentStyle = isDisabled
         ? "text-gray-700-fake font-bold py-2"
         : `hover:text-neutral-black py-2 font-bold ${
-            isActive ? "text-neutral-black" : "text-grey-700-fake"
+            isActive ? "text-neutral-black" : "text-gray-900-fake"
           }`;
       break;
   }
@@ -53,21 +53,20 @@ const getButtonStyles = ({
   } rounded-full`;
 };
 
-//TODO: icon
 export const Button = ({
-  label,
   intent,
   icon,
   size,
   ariaLabel,
   isDisabled,
+  label,
 }: {
-  label: string;
   intent: Intent;
   size: Size;
   icon: Icon;
   ariaLabel: string;
   isDisabled?: boolean;
+  label?: string;
 }) => {
   const [isActive, setIsActive] = useState<boolean>(false);
 
