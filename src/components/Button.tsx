@@ -3,39 +3,51 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Icon, Intent, Size } from "../@types";
 
+const getPadding = ({ size, icon }: { size?: Size; icon: Icon }): string => {
+  if (!!size) {
+    return size === "md" ? "px-6 py-3" : "px-4 py-2";
+  } else if (icon === "only") {
+    return "p-[10px]";
+  } else {
+    return "py-2";
+  }
+};
+
 const getButtonStyles = ({
   intent,
-  size,
   isActive,
+  icon,
+  size,
   isDisabled = false,
 }: {
   intent: Intent;
-  size: Size;
   isActive: boolean;
+  icon: Icon;
+  size?: Size;
   isDisabled?: boolean;
 }): string => {
   let intentStyle: string = "";
-  const padding = size === "md" ? "px-6 py-3" : "px-4 py-2";
+  const padding = getPadding({ size, icon });
 
   switch (intent) {
     case "white":
       intentStyle = isDisabled
-        ? `bg-white font-bold rounded-full text-gray-700-fake ${padding}`
+        ? `bg-white font-bold rounded-full text-gray-700-fake`
         : ` ${
             isActive && "outline"
-          } bg-white font-bold rounded-full hover:bg-gray-70 ${padding}`;
+          } bg-white font-bold rounded-full hover:bg-gray-70`;
       break;
     case "gray":
       intentStyle = isDisabled
-        ? `bg-gray-70 font-bold rounded-full text-gray-700-fake ${padding}`
-        : `bg-gray-70 font-bold rounded-full hover:bg-gray-dark ${padding} ${
+        ? `bg-gray-70 font-bold rounded-full text-gray-700-fake `
+        : `bg-gray-70 font-bold rounded-full hover:bg-gray-dark ${
             isActive && "outline"
           }`;
       break;
     case "black":
       intentStyle = isDisabled
-        ? `bg-gray-700-fake text-neutral-black font-bold ${padding}`
-        : `bg-gray-900-fake font-bold text-white hover:bg-neutral-black ${padding} ${
+        ? `bg-gray-700-fake text-neutral-black font-bold`
+        : `bg-gray-900-fake font-bold text-white hover:bg-neutral-black ${
             isActive && "outline"
           }`;
       break;
@@ -48,7 +60,7 @@ const getButtonStyles = ({
       break;
   }
 
-  return `flex justify-center items-center gap-2 w-max ${intentStyle} ${
+  return `flex justify-center items-center gap-2 w-max ${padding} ${intentStyle} ${
     !isDisabled && "cursor-pointer "
   } rounded-full`;
 };
@@ -56,21 +68,27 @@ const getButtonStyles = ({
 export const Button = ({
   intent,
   icon,
-  size,
   ariaLabel,
+  size,
   isDisabled,
   label,
 }: {
   intent: Intent;
-  size: Size;
   icon: Icon;
   ariaLabel: string;
+  size?: Size;
   isDisabled?: boolean;
   label?: string;
 }) => {
   const [isActive, setIsActive] = useState<boolean>(false);
 
-  const buttonStyle = getButtonStyles({ intent, size, isActive, isDisabled });
+  const buttonStyle = getButtonStyles({
+    intent,
+    size,
+    icon,
+    isActive,
+    isDisabled,
+  });
 
   const iconIsBefore = icon === "before" || icon === "only";
   const iconIsAfter = icon === "after";
@@ -83,7 +101,9 @@ export const Button = ({
       onClick={() => setIsActive(!isActive)}
       disabled={isDisabled}>
       {iconIsBefore && (
-        <FontAwesomeIcon icon={faArrowRight} className="text-[20px]" />
+        <div className="w-5 h-5">
+          <FontAwesomeIcon icon={faArrowRight} className="text-[20px]" />
+        </div>
       )}
       {icon !== "only" && (
         <span
@@ -94,7 +114,9 @@ export const Button = ({
         </span>
       )}
       {iconIsAfter && (
-        <FontAwesomeIcon icon={faArrowRight} className="text-[20px]" />
+        <div className="w-5 h-5">
+          <FontAwesomeIcon icon={faArrowRight} className="text-[20px]" />
+        </div>
       )}
     </button>
   );
