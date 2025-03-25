@@ -48,7 +48,7 @@ const getButtonStyles = ({
       break;
   }
 
-  return `flex justify-center items-center gap-2 ${intentStyle} ${
+  return `flex justify-center items-center gap-2 w-max ${intentStyle} ${
     !isDisabled && "cursor-pointer "
   } rounded-full`;
 };
