@@ -1,7 +1,6 @@
-import { BlogEntry } from "../@types";
 import { Button } from "./Button";
 
-export const BlogEntryCard = ({ blogEntry }: { blogEntry: BlogEntry }) => {
+export const BlogEntryCard = () => {
   return (
     <div
       className={`aspect-3/4 min-w-[294.5px] bg-[url(7.png)] bg-center rounded-md flex flex-col justify-end items-center pb-10`}>
