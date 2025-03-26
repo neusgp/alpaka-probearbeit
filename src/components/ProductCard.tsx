@@ -9,11 +9,11 @@ export const ProductCard = ({ product }: { product: Product }) => {
   return (
     <div className={`${cardColor} rounded-md`}>
       <img src={img} />
-      <div className="px-4 text-white">
+      <div className="px-4 text-white md:block hidden">
         <h3>{name}</h3>
         <p>{description}</p>
       </div>
-      <div className="pl-4 py-6">
+      <div className="pl-4 py-6 md:block hidden">
         <Button intent="white" icon="only" ariaLabel="Read more" />
       </div>
     </div>

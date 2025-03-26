@@ -17,16 +17,16 @@ function App() {
       {/* NAVIGATION */}
       <div
         id="navigation"
-        className="h-22 flex justify-between items-center px-26 py-7">
+        className="h-22 flex justify-between items-center md:px-26 px-4 py-7">
         <img src={"/logo.png"} className="w-[138px]" />
-        <div className="absolute right-26 flex h-22">
+        <div className="absolute md:right-26 right-4 flex h-22">
           {mockNavLinks.map(({ id, label }) => {
             return <NavLink label={label} key={id} />;
           })}
         </div>
       </div>
       {/* HEADER */}
-      <div id="header" className="h-[888px] relative p-6">
+      <div id="header" className="h-[888px] relative md:p-6">
         <div className="w-full h-full bg-[url(/header-img.png)] bg-center bg-cover">
           <div className="center flex flex-col items-center gap-6">
             <div className="text-center">
@@ -49,9 +49,9 @@ function App() {
         </div>
       </div>
       {/* PRODUCTS */}
-      <div id="products" className="py-10 px-26 flex flex-col gap-4">
+      <div id="products" className="py-10 md:px-26 px-4 flex flex-col gap-4">
         <h2>Our Products</h2>
-        <div className="flex gap-4 mb-4">
+        <div className="flex md:flex-row flex-col gap-4 mb-4">
           {mockProducts.map((product) => {
             const { id } = product;
             return <ProductCard product={product} key={id} />;
@@ -67,7 +67,9 @@ function App() {
         </div>
       </div>
       {/* BLOG */}
-      <div id="blog" className="py-10 px-26 flex flex-col justify-center">
+      <div
+        id="blog"
+        className="py-10 md:px-26 px-4 flex flex-col justify-center">
         <div className="flex flex-col gap-4 text-center">
           <h2>Blog</h2>
           <p>
@@ -106,9 +108,9 @@ function App() {
       {/* HIGHLIGHT */}
       <div
         id="highlight"
-        className="py-10 px-26 flex flex-col justify-center rounded-md">
-        <div className="w-full h-117 flex">
-          <div className="bg-blue-gray-dark h-full flex flex-1 flex-col justify-between rounded-l-md py-10 px-8">
+        className="py-10 md:px-26 px-4 flex flex-col justify-center">
+        <div className="w-full flex md:flex-row flex-col-reverse">
+          <div className="bg-blue-gray-dark flex flex-1 flex-col justify-between md:rounded-br-none md:rounded-tl-md rounded-b-md rounded-tl-none py-10 px-8 gap-6">
             <div className="flex flex-col gap-4">
               <h2 className="text-white">
                 Enim nulla facilisis viverra lobortis
@@ -119,18 +121,15 @@ function App() {
                 dolor rhoncus tincidunt porta faucibus lorem in integer et.
               </p>
             </div>
-
-            <div className="">
-              <Button
-                label="Read more"
-                intent="white"
-                icon="none"
-                size="sm"
-                ariaLabel="Read more"
-              />
-            </div>
+            <Button
+              label="Read more"
+              intent="white"
+              icon="none"
+              size="sm"
+              ariaLabel="Read more"
+            />
           </div>
-          <div className="bg-[url(/1.png)] flex-2 bg-center rounded-r-md"></div>
+          <div className="bg-[url(/6.png)] flex-2 bg-center bg-cover md:rounded-tl-none md:rounded-br-md rounded-t-md rounded-bl-none aspect-15/9"></div>
         </div>
       </div>
       {/* FOOTER */}
@@ -140,7 +139,7 @@ function App() {
             <FontAwesomeIcon icon={faAngleUp} />
           </button>
         </div>
-        <div className="bg-gray-70 py-20 px-26 flex">
+        <div className="bg-gray-70 py-20 px-26 md:flex hidden">
           <FooterCard title="Loremipsum GmbH">
             <div className="flex flex-col gap-4">
               <p className="font-light">
@@ -191,9 +190,9 @@ function App() {
             </div>
           </FooterCard>
         </div>
-        <div className="h-16 px-26 py-6 flex justify-between">
-          <p className="text-xs">© 2023 Loremipsum GmbH</p>
-          <div className="flex gap-4">
+        <div className="px-26 py-6 flex flex-col md:flex-row md:justify-between">
+          <p className="text-xs text-center">© 2023 Loremipsum GmbH</p>
+          <div className="flex gap-4 justify-center">
             <p className="text-xs">Impressum</p>
             <p className="text-xs">Datenschutz</p>
           </div>
