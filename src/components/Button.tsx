@@ -10,7 +10,8 @@ export const Button = ({
   size,
   isDisabled,
   label,
-}: //onClick
+  //onClick
+}: 
 {
   intent: Intent;
   icon: Icon;
@@ -18,6 +19,7 @@ export const Button = ({
   size?: Size;
   isDisabled?: boolean;
   label?: string;
+  //onClick
 }) => {
   const [isActive, setIsActive] = useState<boolean>(false);
 

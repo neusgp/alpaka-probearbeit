@@ -3,6 +3,7 @@ import {
   BlogEntryCard,
   Button,
   FooterCard,
+  MenuProductCard,
   NavLink,
   ProductCard,
 } from "./components";
@@ -14,8 +15,15 @@ import {
   mockNavLinks,
   mockProducts,
 } from "./lib";
+import { useState } from "react";
 
 function App() {
+  const [showMegaMenu, setShowMegaMenu] = useState<boolean>(false);
+
+  const handleMegaMenu = () => {
+    setShowMegaMenu(!showMegaMenu);
+  };
+
   return (
     <div id="app" className="text-neutral-black">
       {/* NAVIGATION */}
@@ -25,7 +33,9 @@ function App() {
         <img src={"/logo.png"} className="w-[138px]" />
         <ul className="absolute md:right-26 right-4 md:flex h-22 hidden">
           {mockNavLinks.map(({ id, label }) => {
-            return <NavLink label={label} key={id} />;
+            return (
+              <NavLink label={label} handleMegaMenu={handleMegaMenu} key={id} />
+            );
           })}
         </ul>
         <div className="p-[14px] flex md:hidden justify-center items-center">
@@ -37,7 +47,9 @@ function App() {
         <div className="w-full h-full bg-[url(/header-img.png)] bg-center bg-cover">
           <div className="center flex flex-col items-center gap-6">
             <div className="text-center">
-              <h1 className="text-white">The start of a great adventure.</h1>
+              <h1 className="text-white font-bold text-[48px] md:text-[64px]">
+                The start of a great adventure.
+              </h1>
               <h3 className="text-white hidden md:block">
                 Porta dui sed mattis odio cras integer sapien proin diam.
                 Malesuada purus bibendum nulla libero ut etiam ut. Amet odio
@@ -198,13 +210,51 @@ function App() {
           </FooterCard>
         </div>
         <div className="px-26 py-6 flex flex-col md:flex-row md:justify-between">
-          <p className="text-xs text-center">© 2023 Loremipsum GmbH</p>
+          <p className="!text-xs text-center">© 2023 Loremipsum GmbH</p>
           <div className="flex gap-4 justify-center">
-            <p className="text-xs">Impressum</p>
-            <p className="text-xs">Datenschutz</p>
+            <p className="!text-xs">Impressum</p>
+            <p className="!text-xs">Datenschutz</p>
           </div>
         </div>
       </div>
+      {showMegaMenu && (
+        <div className="absolute top-22 bg-white py-10 px-26 gap-4 hidden md:flex">
+          <div className="flex flex-1 flex-col w-full">
+            <div className="flex flex-col gap-8">
+              <h2>Products</h2>
+              <div className="flex gap-2">
+                {mockProducts.map((product) => {
+                  const { id, name } = product;
+                  return (
+                    <Button
+                      label={name}
+                      key={id}
+                      intent="gray"
+                      ariaLabel={name}
+                      icon="none"
+                      size="sm"
+                    />
+                  );
+                })}
+              </div>
+            </div>
+            <div className="flex h-full items-end">
+              <Button
+                label="Show all"
+                icon="before"
+                intent="text"
+                ariaLabel="Show all"
+              />
+            </div>
+          </div>
+          <div className="flex-1">
+            <MenuProductCard label="Product A" color="bg-green" />
+          </div>
+          <div className="flex-1">
+            <MenuProductCard label="Product B" color="bg-blue-darker" />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

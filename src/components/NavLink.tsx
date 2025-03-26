@@ -1,6 +1,12 @@
 import { useState } from "react";
 
-export const NavLink = ({ label }: { label: string }) => {
+export const NavLink = ({
+  label,
+  handleMegaMenu,
+}: {
+  label: string;
+  handleMegaMenu: () => void;
+}) => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [isHover, setIsHover] = useState<boolean>(false);
 
@@ -14,7 +20,10 @@ export const NavLink = ({ label }: { label: string }) => {
       <button
         type="button"
         className={`font-bold cursor-pointer h-full px-3 ${textColor}`}
-        onClick={() => setIsActive(!isActive)}
+        onClick={() => {
+          setIsActive(!isActive);
+          if (label === "Products") handleMegaMenu();
+        }}
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}>
         {label}

@@ -3,3 +3,4 @@ export * from "./ProductCard";
 export * from "./BlogEntryCard";
 export * from "./FooterCard";
 export * from "./NavLink";
+export * from "./MenuProductCard";
