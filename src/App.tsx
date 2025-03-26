@@ -1,17 +1,16 @@
-import { BlogEntryCard, Button } from "./components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { BlogEntryCard, Button, FooterCard } from "./components";
 import {
   mockBlogEntries,
   mockBlogFilterButtons,
+  mockNavLinks,
   mockProducts,
 } from "./components/lib";
 import { ProductCard } from "./components/ProductCard";
+import { faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
-  const navLinks = [
-    { id: "1", label: "Blog" },
-    { id: "2", label: "Products" },
-    { id: "3", label: "About" },
-  ];
   //TODO: hover functionality nav links
   //TODO: try to use more semantic HTML
   return (
@@ -22,7 +21,7 @@ function App() {
         className="h-22 flex justify-between items-center px-26 py-7">
         <img src={"/logo.png"} className="w-[138px]" />
         <div className="absolute right-26 flex h-22">
-          {navLinks.map(({ id, label }) => {
+          {mockNavLinks.map(({ id, label }) => {
             return (
               // component nav
               <div className="h-full flex flex-col" key={id}>
@@ -115,10 +114,12 @@ function App() {
         </div>
       </div>
       {/* HIGHLIGHT */}
-      <div id="highlight" className="py-10 px-26 flex flex-col justify-center ">
-        <div className="w-full h-117 flex rounded-md">
-          <div className="bg-blue-gray-dark w-auto h-full flex flex-col justify-between py-10 px-8">
-            <div>
+      <div
+        id="highlight"
+        className="py-10 px-26 flex flex-col justify-center rounded-md">
+        <div className="w-full h-117 flex">
+          <div className="bg-blue-gray-dark h-full flex flex-1 flex-col justify-between rounded-l-md py-10 px-8">
+            <div className="flex flex-col gap-4">
               <h2 className="text-white">
                 Enim nulla facilisis viverra lobortis
               </h2>
@@ -139,21 +140,71 @@ function App() {
               />
             </div>
           </div>
-          <div className="bg-[url(/1.png)] aspect-16/9 bg-center"></div>
+          <div className="bg-[url(/1.png)] flex-2 bg-center rounded-r-md"></div>
         </div>
       </div>
       {/* FOOTER */}
       <div id="footer">
         <div className="h-30 flex flex-col justify-center items-center">
-          <button className="text-5 bg-gray-70 p-[10px] rounded-full">
-            up
+          <button className="text-5 bg-gray-70 w-10 h-10 flex justify-center items-center rounded-full cursor-pointer">
+            <FontAwesomeIcon icon={faAngleUp} />
           </button>
         </div>
-        <div className="bg-gray-70 py-20 px-26"></div>
+        <div className="bg-gray-70 py-20 px-26 flex">
+          <FooterCard title="Loremipsum GmbH">
+            <div className="flex flex-col gap-4">
+              <p className="font-light">
+                Musterstraße 16
+                <br />
+                1245 Musterstadt
+                <br />
+                Telefon: 0123 / 456789-10
+                <br />
+                Telefax: 0123 / 456789-11
+              </p>
+              <Button
+                intent="black"
+                label="Zur Kontaktseite"
+                ariaLabel="Zur Kontaktseite"
+                size="sm"
+                icon="none"
+              />
+            </div>
+          </FooterCard>
+          <FooterCard title="Corporate">
+            <ul className="font-light flex flex-col gap-2">
+              <li>About</li>
+              <li>Who we are</li>
+              <li>Team</li>
+              <li>Jobs</li>
+              <li>Development</li>
+            </ul>
+          </FooterCard>
+          <FooterCard title="Products">
+            <ul className="font-light flex flex-col gap-2">
+              {mockProducts.map(({ id, name }) => {
+                return <li key={id}>{name}</li>;
+              })}
+              <li>Show All</li>
+            </ul>
+          </FooterCard>
+          <FooterCard title="Service">
+            <div className="flex flex-col h-full justify-between">
+              <ul className="font-light flex flex-col gap-2">
+                <li>Downloads</li>
+                <li>FAQ</li>
+              </ul>
+              <span className="flex items-center gap-1 font-light">
+                <FontAwesomeIcon icon={faYoutube} />
+                <p>Youtube</p>
+              </span>
+            </div>
+          </FooterCard>
+        </div>
         <div className="h-16 px-26 py-6 flex justify-between">
           <p className="text-xs">© 2023 Loremipsum GmbH</p>
           <div className="flex gap-4">
-            <p className="text-xs">Hola!</p>
+            <p className="text-xs">Impressum</p>
             <p className="text-xs">Datenschutz</p>
           </div>
         </div>

@@ -1,3 +1,9 @@
+export const mockNavLinks = [
+  { id: "1", label: "Blog" },
+  { id: "2", label: "Products" },
+  { id: "3", label: "About" },
+];
+
 export const mockProducts = [
   {
     id: "1",
