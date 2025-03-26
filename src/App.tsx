@@ -1,14 +1,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { BlogEntryCard, Button, FooterCard, NavLink } from "./components";
+import {
+  BlogEntryCard,
+  Button,
+  FooterCard,
+  NavLink,
+  ProductCard,
+} from "./components";
+import { faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faAngleUp, faBars } from "@fortawesome/free-solid-svg-icons";
 import {
   mockBlogEntries,
   mockBlogFilterButtons,
   mockNavLinks,
   mockProducts,
-} from "./components/lib";
-import { ProductCard } from "./components/ProductCard";
-import { faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { faAngleUp, faBars } from "@fortawesome/free-solid-svg-icons";
+} from "./lib";
 
 function App() {
   //TODO: try to use more semantic HTML

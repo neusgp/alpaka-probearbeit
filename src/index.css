@@ -42,6 +42,12 @@ body {
   color: #4b4b4b;
 }
 
+p,
+button,
+li {
+  font-size: 15px;
+}
+
 h1 {
   font-size: 64px;
   font-weight: bold;
