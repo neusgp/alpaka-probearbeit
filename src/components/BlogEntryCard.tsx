@@ -3,7 +3,7 @@ import { Button } from "./Button";
 export const BlogEntryCard = ({ blogEntry }: { blogEntry: BlogEntry }) => {
   const { imgUrl } = blogEntry;
   return (
-    <div
+    <li
       className={`aspect-3/4 min-w-[294.5px] bg-center flex flex-col justify-end items-center relative`}>
       <img src={imgUrl} className="w-full h-full rounded-md" />
       <div className="absolute bottom-10">
@@ -15,6 +15,6 @@ export const BlogEntryCard = ({ blogEntry }: { blogEntry: BlogEntry }) => {
           ariaLabel="Read post"
         />
       </div>
-    </div>
+    </li>
   );
 };

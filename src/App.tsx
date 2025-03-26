@@ -16,7 +16,6 @@ import {
 } from "./lib";
 
 function App() {
-  //TODO: try to use more semantic HTML
   return (
     <div id="app" className="text-neutral-black">
       {/* NAVIGATION */}
@@ -24,11 +23,11 @@ function App() {
         id="navigation"
         className="h-22 flex justify-between items-center md:px-26 px-4 py-7">
         <img src={"/logo.png"} className="w-[138px]" />
-        <div className="absolute md:right-26 right-4 md:flex h-22 hidden">
+        <ul className="absolute md:right-26 right-4 md:flex h-22 hidden">
           {mockNavLinks.map(({ id, label }) => {
             return <NavLink label={label} key={id} />;
           })}
-        </div>
+        </ul>
         <div className="p-[14px] flex md:hidden justify-center items-center">
           <FontAwesomeIcon icon={faBars} className="w-5 h-5 " />
         </div>
@@ -59,12 +58,12 @@ function App() {
       {/* PRODUCTS */}
       <div id="products" className="py-10 md:px-26 px-4 flex flex-col gap-4">
         <h2>Our Products</h2>
-        <div className="flex md:flex-row flex-col gap-4 mb-4">
+        <ul className="flex md:flex-row flex-col gap-4 mb-4">
           {mockProducts.map((product) => {
             const { id } = product;
             return <ProductCard product={product} key={id} />;
           })}
-        </div>
+        </ul>
         <div className="self-end">
           <Button
             intent="text"
@@ -102,12 +101,12 @@ function App() {
               );
             })}
           </div>
-          <div className="flex gap-4 overflow-y-auto">
+          <ul className="flex gap-4 overflow-y-auto">
             {mockBlogEntries.map((blogEntry) => {
               const { id } = blogEntry;
               return <BlogEntryCard key={id} blogEntry={blogEntry} />;
             })}
-          </div>
+          </ul>
           <div className="position-scroll-button">
             <Button intent="black" icon="only" ariaLabel="scroll" />
           </div>

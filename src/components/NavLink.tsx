@@ -10,7 +10,7 @@ export const NavLink = ({ label }: { label: string }) => {
     : "hover:text-green-light";
 
   return (
-    <div className="h-full flex flex-col relative">
+    <li className="h-full flex flex-col relative">
       <button
         type="button"
         className={`font-bold cursor-pointer h-full px-3 ${textColor}`}
@@ -23,6 +23,6 @@ export const NavLink = ({ label }: { label: string }) => {
         <div
           className={`h-1 w-[100%] rounded-t-lg absolute bottom-0 ${bgColor}`}></div>
       )}
-    </div>
+    </li>
   );
 };
