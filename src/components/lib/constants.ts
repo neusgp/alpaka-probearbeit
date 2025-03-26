@@ -22,19 +22,18 @@ export const mockProducts = [
   },
 ];
 
-export const blogFilterButtons = [
+export const mockBlogFilterButtons = [
   { id: "1", label: "Show all" },
   { id: "2", label: "City" },
   { id: "3", label: "Forest" },
   { id: "4", label: "Water" },
 ];
 
-export const blogEntries = [
-  { id: "1", img: "7.png" },
-  { id: "2", img: "7.png" },
-  { id: "3", img: "7.png" },
-  { id: "4", img: "7.png" },
-  { id: "5", img: "7.png" },
-  { id: "6", img: "7.png" },
-  { id: "7", img: "7.png" },
+export const mockBlogEntries = [
+  { id: "1", imgUrl: "/1.png" },
+  { id: "2", imgUrl: "/2.png" },
+  { id: "3", imgUrl: "/3.png" },
+  { id: "4", imgUrl: "/4.png" },
+  { id: "5", imgUrl: "/5.png" },
+  { id: "6", imgUrl: "/6.png" },
 ];

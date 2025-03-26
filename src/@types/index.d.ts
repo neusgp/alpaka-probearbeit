@@ -24,4 +24,4 @@ export type Product = {
 };
 
 //Blog
-export type BlogEntry = { id: Id; img: string };
+export type BlogEntry = { id: Id; imgUrl: string };

@@ -1,5 +1,9 @@
 import { BlogEntryCard, Button } from "./components";
-import { blogEntries, blogFilterButtons, mockProducts } from "./components/lib";
+import {
+  mockBlogEntries,
+  mockBlogFilterButtons,
+  mockProducts,
+} from "./components/lib";
 import { ProductCard } from "./components/ProductCard";
 
 function App() {
@@ -16,7 +20,7 @@ function App() {
       <div
         id="navigation"
         className="h-22 flex justify-between items-center px-26 py-7">
-        <img src={"logo.png"} className="w-[138px]" />
+        <img src={"/logo.png"} className="w-[138px]" />
         <div className="absolute right-26 flex h-22">
           {navLinks.map(({ id, label }) => {
             return (
@@ -35,7 +39,7 @@ function App() {
       </div>
       {/* HEADER */}
       <div id="header" className="h-[888px] p-6 relative">
-        <img src={"header-img.png"} />
+        <img src={"/header-img.png"} />
         <div className="center flex flex-col items-center gap-6">
           <div className="text-center">
             <h1 className="text-white">The start of a great adventure</h1>
@@ -86,7 +90,7 @@ function App() {
         </div>
         <div className="py-10 flex flex-col gap-4 relative">
           <div className="flex gap-2">
-            {blogFilterButtons.map(({ id, label }) => {
+            {mockBlogFilterButtons.map(({ id, label }) => {
               return (
                 <Button
                   key={id}
@@ -100,9 +104,9 @@ function App() {
             })}
           </div>
           <div className="flex gap-4 overflow-y-auto">
-            {blogEntries.map((entry) => {
-              const { id } = entry;
-              return <BlogEntryCard key={id} />;
+            {mockBlogEntries.map((blogEntry) => {
+              const { id } = blogEntry;
+              return <BlogEntryCard key={id} blogEntry={blogEntry} />;
             })}
           </div>
           <div className="position-scroll-button">
@@ -135,7 +139,7 @@ function App() {
               />
             </div>
           </div>
-          <div className="bg-[url(7.png)] aspect-16/9 bg-center"></div>
+          <div className="bg-[url(/1.png)] aspect-16/9 bg-center"></div>
         </div>
       </div>
       {/* FOOTER */}
