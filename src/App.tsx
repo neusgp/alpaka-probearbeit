@@ -149,7 +149,7 @@ function App() {
         <div className="h-16 px-26 py-6 flex justify-between">
           <p className="text-xs">© 2023 Loremipsum GmbH</p>
           <div className="flex gap-4">
-            <p className="text-xs">Impressum</p>
+            <p className="text-xs">Hola!</p>
             <p className="text-xs">Datenschutz</p>
           </div>
         </div>
