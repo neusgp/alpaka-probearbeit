@@ -37,8 +37,8 @@ function App() {
         <div className="w-full h-full bg-[url(/header-img.png)] bg-center bg-cover">
           <div className="center flex flex-col items-center gap-6">
             <div className="text-center">
-              <h1 className="text-white">The start of a great adventure</h1>
-              <h3 className="text-white">
+              <h1 className="text-white">The start of a great adventure.</h1>
+              <h3 className="text-white hidden md:block">
                 Porta dui sed mattis odio cras integer sapien proin diam.
                 Malesuada purus bibendum nulla libero ut etiam ut. Amet odio
                 felis gravida porta accumsan arcu. Libero neque mi vestibulum
@@ -141,7 +141,7 @@ function App() {
       </div>
       {/* FOOTER */}
       <div id="footer">
-        <div className="h-30 flex flex-col justify-center items-center">
+        <div className="pb-5 md:py-10 flex flex-col justify-center items-center">
           <button className="text-5 bg-gray-70 w-10 h-10 flex justify-center items-center rounded-full cursor-pointer">
             <FontAwesomeIcon icon={faAngleUp} />
           </button>
