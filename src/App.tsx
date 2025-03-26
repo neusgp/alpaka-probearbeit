@@ -136,7 +136,7 @@ function App() {
               ariaLabel="Read more"
             />
           </div>
-          <div className="bg-[url(/6.png)] flex-2 bg-center bg-cover md:rounded-tl-none md:rounded-br-md rounded-t-md rounded-bl-none aspect-15/9"></div>
+          <div className="bg-[url(/highlight.png)] flex-2 bg-center bg-cover md:rounded-tl-none md:rounded-br-md rounded-t-md rounded-bl-none aspect-15/9"></div>
         </div>
       </div>
       {/* FOOTER */}
