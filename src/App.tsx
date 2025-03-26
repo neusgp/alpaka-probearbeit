@@ -8,7 +8,7 @@ import {
 } from "./components/lib";
 import { ProductCard } from "./components/ProductCard";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
+import { faAngleUp, faBars } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   //TODO: try to use more semantic HTML
@@ -19,10 +19,13 @@ function App() {
         id="navigation"
         className="h-22 flex justify-between items-center md:px-26 px-4 py-7">
         <img src={"/logo.png"} className="w-[138px]" />
-        <div className="absolute md:right-26 right-4 flex h-22">
+        <div className="absolute md:right-26 right-4 md:flex h-22 hidden">
           {mockNavLinks.map(({ id, label }) => {
             return <NavLink label={label} key={id} />;
           })}
+        </div>
+        <div className="p-[14px] flex md:hidden justify-center items-center">
+          <FontAwesomeIcon icon={faBars} className="w-5 h-5 " />
         </div>
       </div>
       {/* HEADER */}
