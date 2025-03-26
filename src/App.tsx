@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { BlogEntryCard, Button, FooterCard } from "./components";
+import { BlogEntryCard, Button, FooterCard, NavLink } from "./components";
 import {
   mockBlogEntries,
   mockBlogFilterButtons,
@@ -11,7 +11,6 @@ import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
-  //TODO: hover functionality nav links
   //TODO: try to use more semantic HTML
   return (
     <div id="app" className="text-neutral-black">
@@ -22,17 +21,7 @@ function App() {
         <img src={"/logo.png"} className="w-[138px]" />
         <div className="absolute right-26 flex h-22">
           {mockNavLinks.map(({ id, label }) => {
-            return (
-              // component nav
-              <div className="h-full flex flex-col" key={id}>
-                <button
-                  type="button"
-                  className="font-bold cursor-pointer h-full px-3">
-                  {label}
-                </button>
-                <div className="relative h-1 bottom-0 rounded-t-lg bg-green-light"></div>
-              </div>
-            );
+            return <NavLink label={label} key={id} />;
           })}
         </div>
       </div>
