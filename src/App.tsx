@@ -37,29 +37,30 @@ function App() {
         </div>
       </div>
       {/* HEADER */}
-      <div id="header" className="h-[888px] p-6 relative">
-        <img src={"/header-img.png"} />
-        <div className="center flex flex-col items-center gap-6">
-          <div className="text-center">
-            <h1 className="text-white">The start of a great adventure</h1>
-            <h3 className="text-white">
-              Porta dui sed mattis odio cras integer sapien proin diam.
-              Malesuada purus bibendum nulla libero ut etiam ut. Amet odio felis
-              gravida porta accumsan arcu. Libero neque mi vestibulum habitant
-              neque sagittis venenatis.
-            </h3>
+      <div id="header" className="h-[888px] relative p-6">
+        <div className="w-full h-full bg-[url(/header-img.png)] bg-center bg-cover">
+          <div className="center flex flex-col items-center gap-6">
+            <div className="text-center">
+              <h1 className="text-white">The start of a great adventure</h1>
+              <h3 className="text-white">
+                Porta dui sed mattis odio cras integer sapien proin diam.
+                Malesuada purus bibendum nulla libero ut etiam ut. Amet odio
+                felis gravida porta accumsan arcu. Libero neque mi vestibulum
+                habitant neque sagittis venenatis.
+              </h3>
+            </div>
+            <Button
+              label="Read more"
+              intent="white"
+              size="md"
+              icon="none"
+              ariaLabel="Read more"
+            />
           </div>
-          <Button
-            label="Read more"
-            intent="white"
-            size="md"
-            icon="none"
-            ariaLabel="Read more"
-          />
         </div>
       </div>
       {/* PRODUCTS */}
-      <div id="products" className="py-10 px-26 flex flex-col">
+      <div id="products" className="py-10 px-26 flex flex-col gap-4">
         <h2>Our Products</h2>
         <div className="flex gap-4 mb-4">
           {mockProducts.map((product) => {
