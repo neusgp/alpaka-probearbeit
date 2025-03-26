@@ -1,4 +1,3 @@
-import { BlogEntry } from "../@types";
 import { Button } from "./Button";
 
 export const BlogEntryCard = ({ blogEntry }: { blogEntry: BlogEntry }) => {

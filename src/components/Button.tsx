@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { Icon, Intent, Size } from "../@types";
 
 const getPadding = ({ size, icon }: { size?: Size; icon: Icon }): string => {
   if (!!size) {

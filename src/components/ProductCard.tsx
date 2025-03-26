@@ -1,4 +1,3 @@
-import { Product } from "../@types";
 import { Button } from "./Button";
 import { getProductCardColor } from "./lib";
 
