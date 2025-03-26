@@ -10,7 +10,8 @@ export const Button = ({
   size,
   isDisabled,
   label,
-}: {
+}: //onClick
+{
   intent: Intent;
   icon: Icon;
   ariaLabel: string;
